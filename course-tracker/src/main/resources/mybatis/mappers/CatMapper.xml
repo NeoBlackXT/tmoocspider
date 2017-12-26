@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.course.mapper.CatMapper">
+    <insert id="saveCat">
+        INSERT INTO t_cat (c_id,c_cat_name) VALUES (#{cId},#{cCatname})
+    </insert>
+</mapper>

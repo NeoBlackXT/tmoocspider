@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.video.mapper.VideoMapper">
+    <select id="findAllVideo" resultType="cn.tedu.video.pojo.Video">
+        SELECT * FROM t_video
+    </select>
+    <select id="findVideoAfterId" resultType="cn.tedu.video.pojo.Video">
+        SELECT * FROM t_video WHERE c_id >=#{cid}
+    </select>
+    <select id="findItsCourseById" resultType="cn.tedu.video.pojo.Course">
+        SELECT t_course.* FROM t_course WHERE t_course.c_id IN (SELECT t_video.c_course_id FROM t_video WHERE t_video.c_id=#{cId})
+    </select>
+    <select id="findItsCatById" resultType="cn.tedu.video.pojo.Cat">
+        SELECT t_cat.* FROM t_cat WHERE t_cat.c_id IN (SELECT t_course.c_cat_id  FROM t_course WHERE t_course.c_id IN (SELECT t_video.c_course_id FROM t_video WHERE t_video.c_id=#{cId}))
+    </select>
+</mapper>

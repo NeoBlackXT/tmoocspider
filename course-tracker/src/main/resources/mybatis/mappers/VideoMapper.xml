@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.course.mapper.VideoMapper">
+    <insert id="saveVideo">
+        INSERT INTO t_video(c_id,c_course_id,c_video_name,c_video_url) VALUES (#{cId},#{cCourseId},#{cVideoName},#{cVideoUrl})
+    </insert>
+</mapper>

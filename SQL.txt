@@ -1,0 +1,30 @@
+-- auto-generated definition
+create table tmooc.t_cat
+(
+	c_id int auto_increment
+		primary key,
+	c_cat_name varchar(100) null
+)
+;
+
+-- auto-generated definition
+create table tmooc.t_course
+(
+	c_id int auto_increment
+		primary key,
+	c_cat_id int null,
+	c_course_name varchar(100) null,
+	c_course_url varchar(100) null
+)
+;
+
+-- auto-generated definition
+create table tmooc.t_video
+(
+	c_id int auto_increment
+		primary key,
+	c_course_id int null,
+	c_video_name varchar(100) null,
+	c_video_url varchar(100) null
+)
+;

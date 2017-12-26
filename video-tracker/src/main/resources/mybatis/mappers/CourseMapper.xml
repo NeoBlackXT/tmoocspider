@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.video.mapper.CourseMapper">
+    <select id="findAllCourse" resultType="cn.tedu.video.pojo.Course">
+        SELECT * FROM t_course
+    </select>
+    <select id="findItsCatById" resultType="cn.tedu.video.pojo.Cat">
+        SELECT t_cat.* FROM t_cat WHERE t_cat.c_id
+        IN (SELECT c_cat_id FROM t_course WHERE t_course.c_id=#{cId})
+    </select>
+</mapper>
